@@ -1,9 +1,9 @@
 # Clinic Booking v2
 
-The clinic booking app, rebuilt with a **FastAPI** backend and a redesigned **React** frontend. It's a rewrite of v1 (NestJS), which lives in the separate `clinical-booking` folder.
+The clinic booking app, built with a **FastAPI** backend and a redesigned **React** frontend.
 
 - **API:** FastAPI + SQLite, in [`api/`](api/). It has the same endpoints, rules and error format as v1.
-- **Web app:** React + Vite, in [`frontend/`](frontend/). It has a new indigo-to-violet theme, colour-coded doctors and a step indicator.
+- **Web app:** React + Vite, in [`frontend/`](frontend/). It has a indigo-to-violet theme, colour-coded doctors and a step indicator
 
 ## Links
 
@@ -64,7 +64,7 @@ API_URL=https://your-api.onrender.com .venv/bin/python scripts/seed.py
 
 | | v1 | v2 |
 | --- | --- | --- |
-| Backend | NestJS (TypeScript) | FastAPI (Python) |
+| Backend | FastAPI (Python) |
 | Concurrency safety | Synchronous better-sqlite3 on Node's single thread | Async handlers with synchronous `sqlite3` on the event loop |
 | Docs | Swagger at `/docs` | Swagger at `/docs`, plus ReDoc at `/redoc` |
 | Design | Teal, minimal | Indigo-to-violet gradient, colour-coded doctors, step indicator, initials avatars |
