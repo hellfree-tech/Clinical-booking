@@ -59,4 +59,4 @@ API_URL=https://your-api.onrender.com .venv/bin/python scripts/seed.py
 - **Web app:** deploy to Vercel with the root directory set to `frontend`. Set `API_URL` and `API_KEY`.
 
 
-Both versions use the same database rule (a partial unique index) to stop double-booking. **Recommended before real production use:** move to PostgreSQL (or MySQL or MongoDB) so several servers can share the data, keep the rate-limit counts and idempotency keys in Redis, and add automated tests.
+It use a partial unique index rule to stop double-booking. **Recommended before real production use:** move to PostgreSQL (or MySQL or MongoDB) so several servers can share the data, keep the rate-limit counts and idempotency keys in Redis, and add automated tests.
