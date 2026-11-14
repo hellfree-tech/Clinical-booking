@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+api/data/
+*.db
+*.db-shm
+*.db-wal
+*.tsbuildinfo
+.DS_Store
+.vercel
+*.log
