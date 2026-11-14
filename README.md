@@ -1,4 +1,4 @@
-# Clinic Booking v2
+# Clinic Booking 
 
 The clinic booking app, built with a **FastAPI** backend and a redesigned **React** frontend.
 
