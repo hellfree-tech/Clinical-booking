@@ -1,8 +1,8 @@
 # Clinic Booking 
 
-The clinic booking app, built with a **FastAPI** backend and a redesigned **React** frontend.
+The clinic booking app, built with a **FastAPI** backend and designed with **React** frontend.
 
-- **API:** FastAPI + SQLite, in [`api/`](api/). It has the same endpoints, rules and error format as v1.
+- **API:** FastAPI + SQLite, in [`api/`](api/). It has the endpoints, rules and error format.
 - **Web app:** React + Vite, in [`frontend/`](frontend/). It has a indigo-to-violet theme, colour-coded doctors and a step indicator
 
 ## Links
@@ -12,8 +12,6 @@ The clinic booking app, built with a **FastAPI** backend and a redesigned **Reac
 | Web app | http://localhost:5174 |
 | API docs (Swagger) | http://localhost:8000/docs |
 | API docs (ReDoc) | http://localhost:8000/redoc |
-
-v2 uses different ports from v1 (3000 and 5173), so both versions can run side by side.
 
 ## Running it locally
 
