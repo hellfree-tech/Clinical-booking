@@ -60,13 +60,5 @@ API_URL=https://your-api.onrender.com .venv/bin/python scripts/seed.py
 - **API:** create a Render **Web Service** with the Docker runtime and the root directory set to `api`. Set `API_KEY`. Keep it to a single instance, because the rate limiter keeps its counts in memory.
 - **Web app:** deploy to Vercel with the root directory set to `frontend`. Set `API_URL` and `API_KEY`.
 
-## What's different from v1
-
-| | v1 | v2 |
-| --- | --- | --- |
-| Backend | FastAPI (Python) |
-| Concurrency safety | Synchronous better-sqlite3 on Node's single thread | Async handlers with synchronous `sqlite3` on the event loop |
-| Docs | Swagger at `/docs` | Swagger at `/docs`, plus ReDoc at `/redoc` |
-| Design | Teal, minimal | Indigo-to-violet gradient, colour-coded doctors, step indicator, initials avatars |
 
 Both versions use the same database rule (a partial unique index) to stop double-booking. **Recommended before real production use:** move to PostgreSQL (or MySQL or MongoDB) so several servers can share the data, keep the rate-limit counts and idempotency keys in Redis, and add automated tests.
