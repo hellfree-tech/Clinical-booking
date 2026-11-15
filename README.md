@@ -1,9 +1,9 @@
-# Clinic Booking v2
+# Clinic Booking 
 
-The clinic booking app, rebuilt with a **FastAPI** backend and a redesigned **React** frontend. It's a rewrite of v1 (NestJS), which lives in the separate `clinical-booking` folder.
+The clinic booking app, built with a **FastAPI** backend and designed with **React** frontend.
 
-- **API:** FastAPI + SQLite, in [`api/`](api/). It has the same endpoints, rules and error format as v1.
-- **Web app:** React + Vite, in [`frontend/`](frontend/). It has a new indigo-to-violet theme, colour-coded doctors and a step indicator.
+- **API:** FastAPI + SQLite, in [`api/`](api/). It has the endpoints, rules and error format.
+- **Web app:** React + Vite, in [`frontend/`](frontend/). It has a indigo-to-violet theme, colour-coded doctors and a step indicator
 
 ## Links
 
@@ -12,8 +12,6 @@ The clinic booking app, rebuilt with a **FastAPI** backend and a redesigned **Re
 | Web app | http://localhost:5174 |
 | API docs (Swagger) | http://localhost:8000/docs |
 | API docs (ReDoc) | http://localhost:8000/redoc |
-
-v2 uses different ports from v1 (3000 and 5173), so both versions can run side by side.
 
 ## Running it locally
 
@@ -60,13 +58,5 @@ API_URL=https://your-api.onrender.com .venv/bin/python scripts/seed.py
 - **API:** create a Render **Web Service** with the Docker runtime and the root directory set to `api`. Set `API_KEY`. Keep it to a single instance, because the rate limiter keeps its counts in memory.
 - **Web app:** deploy to Vercel with the root directory set to `frontend`. Set `API_URL` and `API_KEY`.
 
-## What's different from v1
 
-| | v1 | v2 |
-| --- | --- | --- |
-| Backend | NestJS (TypeScript) | FastAPI (Python) |
-| Concurrency safety | Synchronous better-sqlite3 on Node's single thread | Async handlers with synchronous `sqlite3` on the event loop |
-| Docs | Swagger at `/docs` | Swagger at `/docs`, plus ReDoc at `/redoc` |
-| Design | Teal, minimal | Indigo-to-violet gradient, colour-coded doctors, step indicator, initials avatars |
-
-Both versions use the same database rule (a partial unique index) to stop double-booking. **Recommended before real production use:** move to PostgreSQL (or MySQL or MongoDB) so several servers can share the data, keep the rate-limit counts and idempotency keys in Redis, and add automated tests.
+It use a partial unique index rule to stop double-booking. **Recommended before real production use:** move to PostgreSQL (or MySQL or MongoDB) so several servers can share the data, keep the rate-limit counts and idempotency keys in Redis, and add automated tests.
