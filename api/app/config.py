@@ -15,6 +15,7 @@ class Config:
     rate_limit_window_ms: int
     idempotency_ttl_ms: int
     log_requests: bool
+    seed_on_start: bool = False
 
 
 def _positive_int(env: Mapping[str, str], name: str, default: int) -> int:
@@ -41,4 +42,5 @@ def load_config(env: Mapping[str, str] = os.environ) -> Config:
         rate_limit_window_ms=_positive_int(env, "RATE_LIMIT_WINDOW_MS", 60_000),
         idempotency_ttl_ms=_positive_int(env, "IDEMPOTENCY_TTL_MS", 24 * 60 * 60 * 1000),
         log_requests=env.get("APP_ENV") != "test",
+        seed_on_start=env.get("SEED_ON_START") == "true",
     )

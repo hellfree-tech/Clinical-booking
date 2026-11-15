@@ -17,6 +17,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from .bookings_service import BookingsService
 from .config import Config, load_config
 from .database import Database
+from .demo_seed import seed_if_empty
 from .errors import ApiError, ApiResult
 from .idempotency import IdempotencyStore
 from .rate_limiter import RateLimiter
@@ -77,6 +78,8 @@ def create_app(config: Optional[Config] = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(_: FastAPI):
+        if config.seed_on_start:
+            seed_if_empty(db)
         yield
         db.close()
 
